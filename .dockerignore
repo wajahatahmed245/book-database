@@ -1,0 +1,12 @@
+.git
+.dockerignore
+.env
+api/node_modules/
+api/vendor/bundle/
+app/node_modules
+app/npm-debug.log
+app/build
+.dockerignore
+**/.git
+**/.DS_Store
+**/node_modules

@@ -1,0 +1,6 @@
+# dotenv
+# TODO Comment out this rule if environment variables can be committed
+.env
+
+# Ignore pow environment settings
+.powenv
