@@ -33,7 +33,7 @@ export const BoxForm = (props) => {
     <>
       <Heading title={heading} />
       <Form form={form} onFinish={onFinish}>
-        <Form.Item name="name" label="Name" rules={[{ required: true, min: 3 }]}>
+        <Form.Item name="name" label="Name" rules={[{ required: true }]}>
           <Input />
         </Form.Item>
         <Form.Item>

@@ -21,7 +21,7 @@ RSpec.describe "/book_shelves", type: :request do
   }
 
   let(:invalid_attributes) {
-    { name: "S1" }
+    { name: "" }
   }
 
   # This should return the minimal set of values that should be in the headers

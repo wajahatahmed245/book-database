@@ -21,7 +21,7 @@ RSpec.describe "/boxes", type: :request do
   }
 
   let(:invalid_attributes) {
-    { name: "Bo" }
+    { name: "" }
   }
 
   # This should return the minimal set of values that should be in the headers

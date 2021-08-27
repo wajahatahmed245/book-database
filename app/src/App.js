@@ -35,7 +35,7 @@ function App() {
       <Router>
         <Nav />
 
-        <Row justify={"center"} align={"middle"} style={{ minHeight: '100vh' }}>
+        <Row justify={"center"} align={"middle"} style={{ minHeight: '75vh' }}>
 
           <Col span={16}>
           </Col>
