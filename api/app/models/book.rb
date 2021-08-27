@@ -21,10 +21,13 @@ class Book < ApplicationRecord
   
     search_condition = "#{search_attrs} ~* '.*#{tokens_condition}.*'"
   
-    includes(:author, :topic, :storage_place)
-      .references(:author, :topic, :storage_place)
+    ids = includes(:authors, :topic, :storage_place)
+      .references(:authors, :topic, :storage_place)
       .where(search_condition)
       .distinct
       .uniq
+      .map(&:id)
+
+    where(id: ids).includes(:authors, :topic, :storage_place)
   end
 end

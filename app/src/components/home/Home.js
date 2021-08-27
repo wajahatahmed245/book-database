@@ -28,15 +28,15 @@ export const Home = (props) => {
       <Title>Book Database</Title>
 
       <Form form={form} onFinish={onFinish} layout="vertical">
-        <Form.Item name="query" label="Query" rules={[{ required: true }]}>
-          <Input />
+        <Form.Item name="query" rules={[{ required: true }]}>
+          <Input placeholder="Search by book's title, authors, topics and storage places" />
         </Form.Item>
         <Form.Item>
           <Space>
             <Button type="primary" htmlType="submit">
               Search
             </Button>
-            <Button htmlType="button" onClick={() => form.resetFields()}>
+            <Button htmlType="button" onClick={() => { form.resetFields(); setHasResults(false) } }>
               Clear
             </Button>
           </Space>
