@@ -78,7 +78,7 @@ export const BookForm = (props) => {
 
   record && form.setFieldsValue({
     title: record.title,
-    author_id: record.author_id,
+    author_ids: record.authors.map(author => author.id),
     topic_id: record.topic_id,
     storage_place: `${record.storage_place_type},${record.storage_place_id}`
   })
@@ -104,8 +104,9 @@ export const BookForm = (props) => {
           <Input />
         </Form.Item>
 
-        <Form.Item name="author_id" label="Author" rules={[{ required: true, message: 'Please select an author.' }]}>
+        <Form.Item name="author_ids" label="Author" rules={[{ required: true, message: 'Please select at least one author.' }]}>
           <Select
+            mode="multiple"
             placeholder="Select an author"
             allowClear
           >

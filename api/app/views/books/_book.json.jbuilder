@@ -1,8 +1,9 @@
 json.id book.id
 json.title book.title
 
-json.author book.author.full_name
-json.author_id book.author.id
+json.authors do 
+  json.array!(book.authors, :id, :full_name)
+end
 
 json.topic book.topic.name
 json.topic_id book.topic.id

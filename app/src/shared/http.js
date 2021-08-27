@@ -88,12 +88,11 @@ export function fetchBookShelves() {
 }
 
 function transformBookPayload(payload) {
-  console.log(payload)
   const [storage_place_type, storage_place_id] = payload.storage_place.split(",")
   return {
     id: payload.id,
     title: payload.title,
-    author_id: payload.author_id,
+    author_ids: payload.author_ids,
     topic_id: payload.topic_id,
     storage_place_id: storage_place_id,
     storage_place_type: storage_place_type

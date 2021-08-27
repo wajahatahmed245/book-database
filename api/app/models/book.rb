@@ -1,9 +1,9 @@
 class Book < ApplicationRecord
-  belongs_to :author
+  has_and_belongs_to_many :authors
   belongs_to :topic
   belongs_to :storage_place
 
-  validates :title, :author, :storage_place, presence: true
+  validates :title, :authors, :storage_place, presence: true
   validates :title, length: { minimum: 3 }
 
   def self.search(query)

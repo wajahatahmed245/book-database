@@ -12,8 +12,11 @@ export const BooksTable = ({ books, handleBookDelete }) => {
       dataIndex: 'title',
     },
     {
-      title: 'Author',
-      dataIndex: 'author',
+      title: 'Authors',
+      dataIndex: 'authors',
+      render: (text, record) => {
+        return record.authors.map(author => author.full_name).join(", ")
+      }
     },
     {
       title: 'Topic',

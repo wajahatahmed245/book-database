@@ -4,7 +4,7 @@ class BooksController < ApplicationController
   # GET /books
   # GET /books.json
   def index
-    @books = Book.includes(:author, :storage_place, :topic).all
+    @books = Book.includes(:authors, :storage_place, :topic).all
   end
 
   # GET /books/1
@@ -43,11 +43,15 @@ class BooksController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_book
-      @book = Book.where(id: params[:id]).includes(:author, :storage_place, :topic).first
+      @book = Book.where(id: params[:id]).includes(:authors, :storage_place, :topic).first
     end
 
     # Only allow a list of trusted parameters through.
     def book_params
-      params.require(:book).permit(:title, :author_id, :topic_id, :storage_place_id)
+      params.require(:book).permit(:title, :topic_id, :storage_place_id, author_ids: []).merge(authors: book_authors)
+    end
+
+    def book_authors
+      Author.where(id: params[:author_ids])
     end
 end
