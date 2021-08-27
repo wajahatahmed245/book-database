@@ -1,6 +1,5 @@
 class SearchController < ApplicationController
   def index
-    query = Book.ransack(params[:q])
-    @books = query.result(distinct: true)
+    @books = Book.search(params[:q])
   end
 end
