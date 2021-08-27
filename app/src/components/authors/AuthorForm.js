@@ -33,10 +33,10 @@ export const AuthorForm = (props) => {
     <>
       <Heading title={heading} />
       <Form form={form} onFinish={onFinish}>
-        <Form.Item name="first_name" label="First Name" rules={[{ required: true, min: 3 }]}>
+        <Form.Item name="first_name" label="First Name" rules={[{ required: true, min: 3, message: 'Please enter a valid first name with at least 3 characters.' }]}>
           <Input />
         </Form.Item>
-        <Form.Item name="last_name" label="Last Name" rules={[{ required: true, min: 3 }]}>
+        <Form.Item name="last_name" label="Last Name" rules={[{ required: true, min: 3, message: 'Please enter a valid last name with at least 3 characters.' }]}>
           <Input />
         </Form.Item>
         <Form.Item>

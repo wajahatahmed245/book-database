@@ -33,7 +33,7 @@ export const TopicForm = () => {
     <>
       <Heading title={heading} />
       <Form form={form} onFinish={onFinish}>
-        <Form.Item name="name" label="Name" rules={[{ required: true, min: 3 }]}>
+        <Form.Item name="name" label="Name" rules={[{ required: true, min: 3, message: 'Please enter a valid name with at least 3 characters.' }]}>
           <Input />
         </Form.Item>
         <Form.Item>

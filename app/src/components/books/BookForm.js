@@ -100,11 +100,11 @@ export const BookForm = (props) => {
       <Heading title={heading} />
       <Form form={form} onFinish={onFinish}>
 
-        <Form.Item name="title" label="Title" rules={[{ required: true, min: 3 }]}>
+        <Form.Item name="title" label="Title" rules={[{ required: true, min: 3, message: 'Please enter valid title with at least 3 characters.' }]}>
           <Input />
         </Form.Item>
 
-        <Form.Item name="author_id" label="Author" rules={[{ required: true }]}>
+        <Form.Item name="author_id" label="Author" rules={[{ required: true, message: 'Please select an author.' }]}>
           <Select
             placeholder="Select an author"
             allowClear
@@ -113,7 +113,7 @@ export const BookForm = (props) => {
           </Select>
         </Form.Item>
 
-        <Form.Item name="topic_id" label="Topic" rules={[{ required: true }]}>
+        <Form.Item name="topic_id" label="Topic" rules={[{ required: true, message: 'Please select an topic.' }]}>
           <Select
             placeholder="Select a topic"
             allowClear
@@ -122,7 +122,7 @@ export const BookForm = (props) => {
           </Select>
         </Form.Item>
 
-        <Form.Item name="storage_place" label="Storage Place" rules={[{ required: true }]}>
+        <Form.Item name="storage_place" label="Storage Place" rules={[{ required: true, message: 'Please select an storage place.' }]}>
           <Select
             placeholder="Select a storage place"
             allowClear

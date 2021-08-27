@@ -33,7 +33,7 @@ export const BookShelfForm = (props) => {
     <>
       <Heading title={heading} />
       <Form form={form} onFinish={onFinish}>
-        <Form.Item name="name" label="Name" rules={[{ required: true }]}>
+        <Form.Item name="name" label="Name" rules={[{ required: true, message: 'Please enter a valid name.' }]}>
           <Input />
         </Form.Item>
         <Form.Item>
