@@ -19,8 +19,10 @@ docker-compose build
 # Then stop the command and run migrations
 docker­-compose run api bundle install
 docker­-compose run api yarn install
-docker­-compose run api rake db:prepare
-docker­-compose run api rake db:seed
+docker­-compose run api bundle exec rake db:prepare
+docker­-compose run api bundle exec rake db:seed
+docker­-compose run app npm install
+
 
 # Then you can run the servers
 docker-compose up
