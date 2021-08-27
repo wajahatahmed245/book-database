@@ -19,15 +19,15 @@ export const Nav = () => {
 
   return (
     <>
-      <Row justify={"center"} align={"middle"} style={{ position: 'absolute', right: '18vw', top: '18vh', zIndex: 9999 }}>
+      <Row justify={"center"} align={"middle"} style={{marginTop: "5vh", marginBottom: "5vh"}} >
         <Col span={16}>
         </Col>
 
         <Col span={16}>
         </Col>
 
-        <Col span={16}>
-          <Button onClick={() => setVisible(true)}>
+        <Col span={16} >
+          <Button onClick={() => setVisible(true)}  style={{ position: 'relative', left: '63vw', zIndex: 2 }} >
             <MenuOutlined />
           </Button>
 
